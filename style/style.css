@@ -18,6 +18,7 @@ body {
     height: 15%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 5%;
     background-color: rgb(206, 205, 205);
 }
@@ -51,9 +52,9 @@ input[type='search'] {
     gap: 2%;
 }
 .list-contact > button img {
-    width: 20%;
-    height: 100%;
-    border-radius: 55%;
+    width: 2.2rem;
+    height: 2rem;
+    border-radius: 50%;
 }
 
 
@@ -93,7 +94,7 @@ section {
 }
 
 .message {
-    width: 30%;
+    max-width: 50%;
     height: max-content; 
     padding: 2%;
     font-size: 120%;
@@ -130,4 +131,52 @@ section {
     width: 70%;
     height: 90%;
     border-radius: 10px 10px 10px 10px;
+}
+
+.new {
+    border: 1px solid black;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 6px;
+    cursor: pointer;
+}
+.info-contact > i {
+    display: none;
+}
+
+@media screen and (max-width: 426px) {
+    .side-bars {
+        width: 100% !important;
+    }
+    section {
+        width: 100% !important;
+        display: none;
+    }
+    .info-contact > i {
+        display: block;
+    }
+    .info-contact {
+        height: 7% !important;
+    }
+    .info-contact img{
+        width: 15% !important;
+    }
+}
+@keyframes showSlow {
+    from {
+        width: 0%;
+
+    }to {
+        display: block;
+        width: 100%;
+        
+    }
+}
+
+.display-none {
+    display: none;
 }

@@ -6,3 +6,7 @@
         if(isset($_SESSION["userNumber"]))
             header('location: chat.html');
     }
+
+    function nombreAleatoire1() {
+        return rand(1, 100);
+      }

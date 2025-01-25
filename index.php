@@ -10,8 +10,7 @@ checkConnected();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/fontawesome/css/all.min.css">
     <style>
         body {
@@ -39,7 +38,7 @@ checkConnected();
 </head>
 
 <body>
-    <form action="#" method="post">
+    <form action="index.php" method="post">
         <fieldset>Inscription</fieldset>
         <div class="input-group mb-3">
             <!-- <span class="input-group-text">@</span> -->
@@ -99,15 +98,25 @@ checkConnected();
         <div class="col-12 btn-grp">
             <button class="btn btn-primary" type="submit">Submit</button>
         </div>
-        You already yave an account? Click <a href="">here</a> to login
+        You already yave an account? Click <a href="connexion.php">here</a> to login
     </form>
 
 
 </body>
 
 <?php
-    if(isset($_GET["lname"])) {
-        
+    if(isset($_POST["lname"])) {
+        $lname = $_POST["lname"];
+        $fname = $_POST["lname"];
+        $uname = $_POST["Username"];
+        $country = $_POST["country"];
+        $phone = $_POST["tel"];
+        $psw = $_POST["psw"];
+        $phone = $country . "" . $phone;
+        $img = nombreAleatoire1();
+        $query = mysqli_query($conn, "INSERT INTO users VALUES('$phone', '$lname', '$fname', '$uname', '$psw', 'assets/default/$img.jpg')");
+        $_SESSION["userNumber"] = $phone;
+        header('location: chat.html');
     }
 ?>
 
